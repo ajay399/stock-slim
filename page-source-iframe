@@ -1,0 +1,450 @@
+
+<script>
+
+
+
+
+var storeId = ``;
+var shop = `singhchand.myshopify.com`;  
+var show_msg_with_icon = ``;
+var show_text = ``;
+var display_position = ``;
+var activate = `1`;
+</script>
+
+
+
+    
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <title>Demo App</title>
+
+    <meta charset=utf-8 >
+    <meta http-equiv=X-UA-Compatible content="IE=edge">
+    <meta http-equiv=Content-Type content="text/html; charset=UTF-8">
+    <meta name=viewport content="width=device-width, initial-scale=1">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+
+    <link rel="stylesheet" type="text/css" href="source/datatable.css" />
+    <link rel="stylesheet" type="text/css" href="source/polaris.css" />
+    <link rel="stylesheet" type="text/css" href="source/style.css" />
+    <script src="source/jquery.min.js"></script>
+
+     <script src="source/initial.js"></script>
+     <script src="source/jquery.min.js"></script>
+    <script src="source/datatable.js"></script>
+</head>
+
+
+
+
+    
+
+
+<body>
+
+
+                    <div class="tab">
+                      <!-- <button class="tablinks Polaris-Button active " onclick="tabData(event, 'analytics')">Analytics</button> -->
+                      <button class="tablinks Polaris-Button active " onclick="tabData(event, 'settings')"> Settings</button>
+                      <!-- <button class="tablinks Polaris-Button " onclick="tabData(event, 'preview')">Popup Settings</button> -->
+                      <button class="tablinks Polaris-Button " onclick="tabData(event, 'install')">Installation</button>
+                      <button class="tablinks Polaris-Button " onclick="tabData(event, 'support')">Support</button>
+                     </div>
+
+
+                     
+
+
+
+<div class="app_wrapper">
+  
+<div class="tabcontent" id="settings" style="display:block">
+<div class="Polaris-PageActions">
+   <div class="Polaris-Stack Polaris-Stack--spacingTight Polaris-Stack--distributionTrailing">
+      <div class="Polaris-Stack__Item ">
+         <div>
+            <button style="min-width: 69.97px;"  class="submitSettings Polaris-Button Polaris-Button--primary" data-enable="" type="submit">
+               <span class="Polaris-Button__Content">
+                  <span class="Polaris-Button__Text setting_btn_text">Save</span>
+                  <span class="Polaris-Button__Spinner setting_btn_spin" style="display: none";>
+                     <span class="Polaris-Spinner Polaris-Spinner--sizeSmall">
+                        <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                           <path d="M7.229 1.173a9.25 9.25 0 1011.655 11.412 1.25 1.25 0 10-2.4-.698 6.75 6.75 0 11-8.506-8.329 1.25 1.25 0 10-.75-2.385z"></path>
+                        </svg>
+                     </span>
+                     <span role="status"><span class="Polaris-VisuallyHidden">Loading</span></span>
+                  </span>
+               </span>
+            </button>
+         </div>
+      </div>
+   </div>
+</div>
+<form id="settingForm" style="margin-top:22px;">
+   <div>
+      <div class="success-msgs Polaris-Frame-ToastManager"></div>
+      <div class="Polaris-Layout">
+         <div class="Polaris-Layout__AnnotatedSection" >
+            <div class="Polaris-Layout__AnnotationWrapper">
+               
+               <div class="Polaris-Layout__AnnotationContent">
+                  <div class="Polaris-Card">
+                     <div class="Polaris-Card__Section">
+                        <div class="Polaris-SettingAction enabled-disabled">
+                                                      <div class="Polaris-SettingAction__Setting ">App Is <span class="Polaris-TextStyle--variationStrong">Disabled</span>.</div>
+                           <div class="Polaris-SettingAction__Action " ><button value="0" type="button" class="enable_setting Polaris-Button Polaris-Button--primary">Enable Icon</button></div>
+                                                    </div>
+                     </div>
+                  </div>
+
+
+  <div class="Polaris-Card" >
+               <div class="Polaris-Card__Section">
+                  <h2><b style="
+                     font-size: 1.7rem;
+                     ">Setup Guide</b></h2>
+                  <br>
+                  <div class="Polaris-FormLayout">
+                     <div class="Polaris-FormLayout__Item">
+                        (1) Keep the stock-range &amp; messages in <b>ascending orders</b>.<br> Example: <b>1-5</b> : X message, <b>6-10</b> : Y message &amp; so on to avoid issues &amp; confusions.
+                     </div>
+                     <div class="Polaris-FormLayout__Item">
+                        (2) <b>No field is mandatory,</b> You can fill for the stock range &amp; messages only for those, which you want to show.<br> Example : You can ignore 0 stock field by keeping it empty &amp; that will be not shown in the store.
+                     </div>
+
+<div class="Polaris-FormLayout__Item">
+                        (3) <b>In the message,</b> You can use the word <b>STOCK</b> to show stock quantity/numers there. <br>Example : Only STOCK left! will be converted to Only 10 left!
+                     </div>
+                  </div>
+               </div>
+            </div>
+
+
+               </div>
+            </div>
+         </div>
+      </div>
+     
+
+      <div id="PolarisPortalsContainer"></div>
+   </div>
+
+<div class="Polaris-Layout" style="margin-top: 0;">
+   
+   <div class="Polaris-Layout__Section">
+      
+    
+
+
+<div class="Polaris-Card messageFields">
+         <div class="Polaris-Card__Header" >
+            
+<h2 class="Polaris-Heading">Condition</h2>
+<h2 class="Polaris-Heading">Stock From</h2>
+<h2 class="Polaris-Heading">Stock To</h2><h2 class="Polaris-Heading">Message</h2>
+         </div>
+
+         <div class="Polaris-Card__Header" >
+            
+<h2 class="Polaris-Heading">If Product/Variant Quantity Is Zero (0)</h2>
+<div class="Polaris-TextField">
+               <input disabled type="number"  class="Polaris-TextField__Input" value="0" aria-labelledby="PolarisTextField11Label" aria-invalid="false" aria-multiline="false" placeholder="Please enter">
+               <div class="Polaris-TextField__Backdrop"></div>
+            </div>
+<div class="Polaris-TextField">
+               <input disabled type="number"  class="Polaris-TextField__Input" value="0" aria-labelledby="PolarisTextField11Label" aria-invalid="false" aria-multiline="false" placeholder="Please enter">
+               <div class="Polaris-TextField__Backdrop"></div>
+            </div><div class="Polaris-TextField">
+               <input type="text" name="msg_0"  class="Polaris-TextField__Input" value="" aria-labelledby="PolarisTextField11Label" aria-invalid="false" aria-multiline="false" placeholder="Please enter">
+               <div class="Polaris-TextField__Backdrop"></div>
+            </div>
+         </div>
+
+<div class="Polaris-Card__Header" >
+            
+<h2 class="Polaris-Heading">If Product/Variant Quantity Is Between</h2>
+<div class="Polaris-TextField">
+               <input type="number" name="min_1_1"  class="Polaris-TextField__Input" value="" aria-labelledby="PolarisTextField11Label" aria-invalid="false" aria-multiline="false" placeholder="Please enter">
+               <div class="Polaris-TextField__Backdrop"></div>
+            </div>
+<div class="Polaris-TextField">
+               <input type="number" name="min_1_2"  class="Polaris-TextField__Input" value="" aria-labelledby="PolarisTextField11Label" aria-invalid="false" aria-multiline="false" placeholder="Please enter">
+               <div class="Polaris-TextField__Backdrop"></div>
+            </div><div class="Polaris-TextField">
+               <input type="text" name="msg_1"  class="Polaris-TextField__Input" value="" aria-labelledby="PolarisTextField11Label" aria-invalid="false" aria-multiline="false" placeholder="Please enter">
+               <div class="Polaris-TextField__Backdrop"></div>
+            </div>
+         </div>
+
+
+<div class="Polaris-Card__Header" >
+            
+<h2 class="Polaris-Heading">If Product/Variant Quantity Is Between</h2>
+<div class="Polaris-TextField">
+               <input type="number" name="min_2_1"  class="Polaris-TextField__Input" value="" aria-labelledby="PolarisTextField11Label" aria-invalid="false" aria-multiline="false" placeholder="Please enter">
+               <div class="Polaris-TextField__Backdrop"></div>
+            </div>
+<div class="Polaris-TextField">
+               <input type="number" name="min_2_2"  class="Polaris-TextField__Input" value="" aria-labelledby="PolarisTextField11Label" aria-invalid="false" aria-multiline="false" placeholder="Please enter">
+               <div class="Polaris-TextField__Backdrop"></div>
+            </div><div class="Polaris-TextField">
+               <input type="text" name="msg_2"  class="Polaris-TextField__Input" value="" aria-labelledby="PolarisTextField11Label" aria-invalid="false" aria-multiline="false" placeholder="Please enter">
+               <div class="Polaris-TextField__Backdrop"></div>
+            </div>
+         </div>
+
+
+<div class="Polaris-Card__Header" >
+            
+<h2 class="Polaris-Heading">If Product/Variant Quantity Is Between</h2>
+<div class="Polaris-TextField">
+               <input type="number" name="min_3_1"  class="Polaris-TextField__Input" value="" aria-labelledby="PolarisTextField11Label" aria-invalid="false" aria-multiline="false" placeholder="Please enter">
+               <div class="Polaris-TextField__Backdrop"></div>
+            </div>
+<div class="Polaris-TextField">
+               <input type="number" name="min_3_2"  class="Polaris-TextField__Input" value="" aria-labelledby="PolarisTextField11Label" aria-invalid="false" aria-multiline="false" placeholder="Please enter">
+               <div class="Polaris-TextField__Backdrop"></div>
+            </div><div class="Polaris-TextField">
+               <input type="text" name="msg_3"  class="Polaris-TextField__Input" value="" aria-labelledby="PolarisTextField11Label" aria-invalid="false" aria-multiline="false" placeholder="Please enter">
+               <div class="Polaris-TextField__Backdrop"></div>
+            </div>
+         </div>
+
+
+<div class="Polaris-Card__Header" >
+            
+<h2 class="Polaris-Heading">If Product/Variant Quantity Is Between</h2>
+<div class="Polaris-TextField">
+               <input type="number" name="min_4_1"  class="Polaris-TextField__Input" value="" aria-labelledby="PolarisTextField11Label" aria-invalid="false" aria-multiline="false" placeholder="Please enter">
+               <div class="Polaris-TextField__Backdrop"></div>
+            </div>
+<div class="Polaris-TextField">
+               <input type="number" name="min_4_2"  class="Polaris-TextField__Input" value="" aria-labelledby="PolarisTextField11Label" aria-invalid="false" aria-multiline="false" placeholder="Please enter">
+               <div class="Polaris-TextField__Backdrop"></div>
+            </div><div class="Polaris-TextField">
+               <input type="text" name="msg_4"  class="Polaris-TextField__Input" value="" aria-labelledby="PolarisTextField11Label" aria-invalid="false" aria-multiline="false" placeholder="Please enter">
+               <div class="Polaris-TextField__Backdrop"></div>
+            </div>
+         </div>
+
+         <div class="Polaris-Card__Header" >
+            
+<h2 class="Polaris-Heading">If Product/Variant Quantity Is Between</h2>
+<div class="Polaris-TextField">
+               <input type="number" name="min_5_1"  class="Polaris-TextField__Input" value="" aria-labelledby="PolarisTextField11Label" aria-invalid="false" aria-multiline="false" placeholder="Please enter">
+               <div class="Polaris-TextField__Backdrop"></div>
+            </div>
+<div class="Polaris-TextField">
+               <input type="number" name="min_5_2"  class="Polaris-TextField__Input" value="" aria-labelledby="PolarisTextField11Label" aria-invalid="false" aria-multiline="false" placeholder="Please enter">
+               <div class="Polaris-TextField__Backdrop"></div>
+            </div><div class="Polaris-TextField">
+               <input type="text" name="msg_5"  class="Polaris-TextField__Input" value="" aria-labelledby="PolarisTextField11Label" aria-invalid="false" aria-multiline="false" placeholder="Please enter">
+               <div class="Polaris-TextField__Backdrop"></div>
+            </div>
+         </div>
+         <div class="Polaris-Card__Section">
+            
+            <div>
+
+
+         </div>
+         </div>
+      </div>
+   </div>
+</div>
+
+
+
+
+
+
+</form>
+<div class="Polaris-PageActions">
+   <div class="Polaris-Stack Polaris-Stack--spacingTight Polaris-Stack--distributionTrailing">
+      <div class="Polaris-Stack__Item ">
+         <div>
+            <button style="min-width: 69.97px;
+                                        "  class="submitSettings Polaris-Button Polaris-Button--primary" data-enable="" type="submit">
+               <span class="Polaris-Button__Content">
+                  <span class="Polaris-Button__Text setting_btn_text">Save</span>
+                  <span class="Polaris-Button__Spinner setting_btn_spin" style="display: none";>
+                     <span class="Polaris-Spinner Polaris-Spinner--sizeSmall">
+                        <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                           <path d="M7.229 1.173a9.25 9.25 0 1011.655 11.412 1.25 1.25 0 10-2.4-.698 6.75 6.75 0 11-8.506-8.329 1.25 1.25 0 10-.75-2.385z"></path>
+                        </svg>
+                     </span>
+                     <span role="status"><span class="Polaris-VisuallyHidden">Loading</span></span>
+                  </span>
+               </span>
+            </button>
+         </div>
+      </div>
+   </div>
+</div></div>
+<div class="tabcontent" id="plan" style="display:none">
+
+<div class="pricing_plan">
+<div class="price_columns">
+<ul class="price">
+<li class="header">
+Pocket Friendly Plan
+</li>
+<li class="grey price_label">$1.99 / Month</li>
+<li class="price_feture">
+<ul>
+<li class="fetures_yes">Custom Instagram Icon</li>
+<li class="fetures_yes">Custom Instagram Popup
+</li>
+<li class="fetures_yes">Unlimited Redirects
+</li>
+ <li class="fetures_yes">Rich Analytics Overview
+</li>
+<li class="fetures_yes">Boost Instagram Followers
+</li>
+
+
+
+</ul>
+</li>
+
+
+<li class="grey  Price_button">
+<button class="monthlyPlan" >Select & Proceed</button>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="tabcontent" id="install" style="display:none" >
+  <div style="width: 100% !important;">
+   <div>
+      <div class="install_mgmt_success_msgs Polaris-Frame-ToastManager"></div>
+      <div class="Polaris-Frame Polaris-Frame--hasTopBar" data-polaris-layer="true">
+         <div class="Polaris-Frame__ContextualSaveBar Polaris-Frame-CSSAnimation--startFade"></div>
+         <main class="" id="AppFrameMain" data-has-global-ribbon="false" style="display: contents">
+            <div class="Polaris-Frame__Content">
+               <div class="Polaris-Page">
+                  <div class="Polaris-Page__Content">
+                     <div class="Polaris-Layout">
+                        <div class="Polaris-Layout__Section">
+                           <!-- notification  -->
+                           <div class="Polaris-Banner Polaris-Banner--statusSuccess Polaris-Banner--hasDismiss Polaris-Banner--withinPage success_msg_box" tabindex="0" role="status" aria-live="polite" aria-labelledby="PolarisBanner8Heading" aria-describedby="PolarisBanner8Content" style="display:none;margin-bottom: 15px;">
+                              <div class="Polaris-Banner__Dismiss">
+                                 <button class="Polaris-Button Polaris-Button--plain Polaris-Button--iconOnly close_btn" aria-label="Dismiss notification" type="button">
+                                    <span class="Polaris-Button__Content">
+                                       <span class="Polaris-Button__Icon">
+                                          <span class="Polaris-Icon">
+                                             <span class="Polaris-VisuallyHidden"></span>
+                                             <svg viewBox="0 0 20 20" class="Polaris-Icon__Svg" focusable="false" aria-hidden="true">
+                                                <path d="m11.414 10 4.293-4.293a.999.999 0 1 0-1.414-1.414L10 8.586 5.707 4.293a.999.999 0 1 0-1.414 1.414L8.586 10l-4.293 4.293a.999.999 0 1 0 1.414 1.414L10 11.414l4.293 4.293a.997.997 0 0 0 1.414 0 .999.999 0 0 0 0-1.414L11.414 10z"></path>
+                                             </svg>
+                                          </span>
+                                       </span>
+                                    </span>
+                                 </button>
+                              </div>
+                              <div class="Polaris-Banner__Ribbon">
+                                 <span class="Polaris-Icon Polaris-Icon--colorSuccess Polaris-Icon--applyColor">
+                                    <span class="Polaris-VisuallyHidden"></span>
+                                    <svg viewBox="0 0 20 20" class="Polaris-Icon__Svg" focusable="false" aria-hidden="true">
+                                       <path fill-rule="evenodd" d="M0 10a10 10 0 1 0 20 0 10 10 0 0 0-20 0zm15.2-1.8a1 1 0 0 0-1.4-1.4L9 11.6 6.7 9.3a1 1 0 0 0-1.4 1.4l3 3c.4.4 1 .4 1.4 0l5.5-5.5z"></path>
+                                    </svg>
+                                 </span>
+                              </div>
+                              <div class="Polaris-Banner__ContentWrapper">
+                                 <div class="Polaris-Banner__Heading" id="PolarisBanner8Heading">
+                                    <p class="Polaris-Heading success_msg"></p>
+                                 </div>
+                              </div>
+                           </div>
+                           <!-- notification  -->
+                           <div class="Polaris-Card">
+                              <div class="Polaris-Card__Section">
+                                 <h2><b style="
+                                    font-size: 1.7rem;
+                                    ">Install/Uninstall app for your theme.</b></h2>
+                                 <br>
+                                 <div class="Polaris-FormLayout">
+                                    <div class="Polaris-FormLayout__Item">
+                                       <div>
+                                          <button style="min-width: 69.97px;"  class="Polaris-Button Polaris-Button--primary install_btn" type="button">
+                                             <span class="Polaris-Button__Content">
+                                                <span class="Polaris-Button__Text install_btn_text">Install</span>
+                                                <span class="Polaris-Button__Spinner install_btn_spin" style="display: none";>
+                                                   <span class="Polaris-Spinner Polaris-Spinner--sizeSmall">
+                                                      <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                                         <path d="M7.229 1.173a9.25 9.25 0 1011.655 11.412 1.25 1.25 0 10-2.4-.698 6.75 6.75 0 11-8.506-8.329 1.25 1.25 0 10-.75-2.385z"></path>
+                                                      </svg>
+                                                   </span>
+                                                   <span role="status"><span class="Polaris-VisuallyHidden">Loading</span></span>
+                                                </span>
+                                             </span>
+                                          </button>
+                                          <button style="min-width: 87.56px;" class="Polaris-Button Polaris-Button--destructive uninstall_btn" type="button">
+                                             <span class="Polaris-Button__Content">
+                                                <span class="Polaris-Button__Text uninstall_btn_text">Uninstall</span>
+                                                <span class="Polaris-Button__Spinner uninstall_btn_spin" style="display: none";>
+                                                   <span class="Polaris-Spinner Polaris-Spinner--sizeSmall">
+                                                      <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                                         <path d="M7.229 1.173a9.25 9.25 0 1011.655 11.412 1.25 1.25 0 10-2.4-.698 6.75 6.75 0 11-8.506-8.329 1.25 1.25 0 10-.75-2.385z"></path>
+                                                      </svg>
+                                                   </span>
+                                                   <span role="status"><span class="Polaris-VisuallyHidden">Loading</span></span>
+                                                </span>
+                                             </span>
+                                          </button>
+                                          <div id="PolarisPortalsContainer"></div>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </main>
+      </div>
+   </div>
+</div>
+
+
+
+</div>
+<div class="tabcontent" id="support" style="display:none" >
+  <div class="Polaris-Page">
+              
+              <div class="Polaris-Page__Content">
+                <div class="Polaris-Layout">
+                  <div class="Polaris-Layout__Section">
+                    <div class="Polaris-Card" >
+<div class="Polaris-Card__Section">
+<div class="support_wrapper" style="text-align: center;">
+   
+
+    <div class="Polaris-FooterHelp__Text">Feel free to ask if you have any questions on this, We have got your back on this.<br>
+    Reach out to us via
+    <a class="Polaris-Link" target="_parent" href="mailto:imailshopifydev@gmail.com?subject=New request for Shopify app installation help" data-polaris-unstyled="true">E-mail</a> OR <a class="Polaris-Link" target="_blank" href="https://wa.me/+918200074385" data-polaris-unstyled="true">Whatsapp</a>.</div>
+</div>
+</div>
+</div>
+                  </div>
+                </div>
+              </div>
+            </div></div>
+</div>
+
+
+<script src="https://unpkg.com/@shopify/app-bridge@2"></script>
+<script src="source/main.js"></script>
+
+</body>
+
+
+</html>
