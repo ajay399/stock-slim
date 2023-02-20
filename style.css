@@ -1,0 +1,416 @@
+.tablinks {
+
+    font-weight: 500;
+
+    margin: 5px -15px 5px 22px;
+
+}
+
+
+
+.tab {
+
+    overflow: hidden;
+
+    border: none;
+
+    background-color: #fff;
+
+    /* position: fixed; */
+
+    width: 100%;
+
+    top: 0;
+
+    z-index: 99999;
+
+    display: inline-block;
+
+    padding: 3px 7px 3px 7px;
+
+    box-shadow: 0 0px 5px 0px rgb(63 63 68 / 15%);
+
+}
+
+
+
+
+
+.tab button.active {
+
+    background: #eee;
+
+}
+
+
+
+
+
+.disclaimer {
+
+    display: none !important;
+
+}
+
+
+
+.app_wrapper {
+
+    padding: 0 50px
+}
+
+
+
+.pricing_plan {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+}
+
+
+
+.img_uploader_prw_wrapper {
+    display: flex;
+    border: 1px dotted #ddd;
+    padding: 200px 23px 23px 23px;
+    min-height: 250px;
+}
+
+
+.text_with_icon {
+    margin: 15px 5px;
+    font-size: 14px;
+    line-height: .5 !important;
+    padding: 10px;
+    box-shadow: 0 1px 8px #00122e3d;
+    color: #1e2433;
+    background-color: #fff;
+    border-radius: 8px;
+}
+
+
+
+.img_uploader_prw {
+
+    max-height: 55px;
+
+
+}
+
+
+
+.price_columns {
+
+    padding-top: 30px;
+
+}
+
+
+
+.price {
+
+
+
+    width: 375px;
+
+    clear: both;
+
+    margin: 0 auto;
+
+    border: 1px solid #eee;
+
+    padding: 0;
+
+    transition: .3s;
+
+    background: #fff;
+
+}
+
+
+
+.pricing_plan ul {
+
+    list-style-type: none;
+
+    margin: 0;
+
+    padding: 0;
+
+}
+
+
+
+.price .header {
+
+    background-color: #6371c7;
+
+    color: #fff;
+
+    font-size: 20px;
+
+    position: relative;
+
+}
+
+
+
+.price li {
+
+    text-align: center;
+
+    border: 0;
+
+    margin: 0;
+
+    padding: 10px;
+
+    font-size: 16px;
+
+    background: #fff;
+
+}
+
+
+
+.price .grey {
+
+    background-color: #eee;
+
+    font-size: 20px;
+
+    background: #fff;
+
+}
+
+
+
+.pricing-plan .price .Price_button {
+
+    padding-bottom: 30px;
+
+}
+
+
+
+.monthlyPlan {
+
+    cursor: pointer;
+
+    border: 1px solid #6371c7;
+
+    background: linear-gradient(to bottom, #6371c7, #5563c1);
+
+    color: #fff;
+
+    font-size: 19px;
+
+    padding: 3px 15px 5px;
+
+    text-decoration: none;
+
+    border-radius: 44px;
+
+}
+
+
+
+.form_select {
+
+    opacity: 1 !important;
+
+    position: initial !important;
+
+    width: 100%;
+
+}
+
+
+
+.form_select {
+
+    padding: 0.5rem 1.2rem;
+
+    -moz-appearance: none;
+
+    position: absolute;
+
+    z-index: 10;
+
+    top: 0;
+
+    right: 0;
+
+    bottom: 0;
+
+    left: 0;
+
+    background-color: #fff;
+
+    border: 0.1rem solid var(--p-border, #c4cdd5);
+
+    border-radius: var(--p-border-radius-base, 3px);
+
+    box-shadow: inset 0 1px 0 0 rgb(99 115 129 / 5%);
+
+    outline: none;
+
+}
+
+
+
+.Polaris-Select__Icon {
+
+    position: absolute;
+
+    top: 9px;
+
+    right: 5px;
+
+}
+
+
+
+.custom_switch input:checked[type=checkbox] {
+
+    background: #6371c7;
+
+}
+
+
+
+.custom_switch input[type=checkbox] {
+
+    position: relative;
+
+    width: 35px;
+
+    height: 20px;
+
+    -webkit-appearance: none;
+
+    background: #c6c6c6;
+
+    outline: none;
+
+    cursor: pointer;
+
+    border-radius: 30px;
+
+    box-shadow: inset 0 0 5px rgb(0 0 0 / 20%);
+
+    transition: background 300ms linear;
+
+}
+
+
+
+.custom_switch input:checked[type=checkbox]::before {
+
+    left: 19px;
+
+}
+
+
+
+.custom_switch input[type=checkbox]::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 12px;
+
+    height: 12px;
+
+    border-radius: 20px;
+
+    top: 4px;
+
+    left: 4px;
+
+    background: #fff;
+
+    transform: scale(1);
+
+    box-shadow: 0 2px 5px rgb(0 0 0 / 20%);
+
+    transition: left 118ms linear;
+
+}
+
+
+
+
+
+form.form-horizontal input,
+form.form-horizontal textarea {
+
+    width: 100%;
+
+    font-size: 14px;
+
+}
+
+
+.Polaris-Button--primary,
+.Polaris-Button--primary:hover,
+.Polaris-Button--primary:focus,
+.Polaris-Button--primary:active {
+    background: #008060;
+    border-color: transparent;
+    box-shadow: unset;
+}
+
+
+.Polaris-Button--primary.Polaris-Button--disabled {
+    background: #00806094;
+    border-color: transparent;
+
+}
+
+
+/* HIDE RADIO */
+[type=radio] {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* IMAGE STYLES */
+[type=radio]+img {
+    cursor: pointer;
+    opacity: 0.6;
+}
+
+/* CHECKED STYLES */
+[type=radio]:checked+img {
+    outline: 2px solid #ccc;
+    opacity: 1;
+}
+
+.layoutSelectorImg {
+    width: 200px;
+    height: auto;
+    border: 1px solid #ddd;
+}
+
+.imgml {
+    margin-left: 15px;
+}
+
+.Polaris-Spinner svg {
+    animation: Polaris-Spinner--loading 500ms linear infinite;
+
+}
+
+
+.messageFields .Polaris-Card__Header {
+    display: flex;
+    justify-content: space-evenly;
+}
